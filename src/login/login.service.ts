@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import * as puppeteer from 'puppeteer';
 
-async function login(zid: string, password: string) {
+async function loginHelper(zid: string, password: string) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto('https://webcms3.cse.unsw.edu.au/login');
@@ -24,6 +24,6 @@ export class LoginService {
   //function for checking if user login
 
   async checkLogin(zid: string, password: string) {
-    return await login(zid, password);
+    return await loginHelper(zid, password);
   }
 }
