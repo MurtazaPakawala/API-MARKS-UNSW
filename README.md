@@ -6,6 +6,8 @@
 - the data is unclean since every course has different marking scheme
 - look at png file to get an idea
 
+## FINAL AIM
+- The AIM is to make leaderboards for every comp course and visual graphs for the marks better than the current way.
 
 
 
