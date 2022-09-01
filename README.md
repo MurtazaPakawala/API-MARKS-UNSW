@@ -1,3 +1,18 @@
+##Intro
+#this is my buildup on the recent project using puppeteer in getting login access to webcms and using the marks API.
+#in this project I have used nestjs to build API which can be used in further projects and open to others to use it to make usefull applications on UNSW marks API
+
+
+
+
+
+
+
+
+
+
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
