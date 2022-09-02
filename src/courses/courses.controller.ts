@@ -5,8 +5,14 @@ import { CoursesService } from './courses.service';
 export class CoursesController {
   constructor(private courseService: CoursesService) {}
 
-  @Get()
-  getCourseMarks(@Query('code') code: number) {
-    return this.courseService.getMarks('', '', code);
+  @Get('marks')
+  getCourseMarks(
+    @Query('code') code: number,
+    @Query('zid') zid: string,
+    @Query('password') password: string,
+    @Query('term') term: 'string',
+  ) {
+    const marks = this.courseService.getMarks(zid, password, code, term);
+    return marks;
   }
 }
