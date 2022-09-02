@@ -1,3 +1,29 @@
+## Intro
+
+- this is my buildup on my previous project using puppeteer in getting login access to webcms and getting the access to the marks API fetching data from UNSW CSE server using STUREC.
+- in this project I have used nestjs to build API which can be used in further projects and open to others to use it to make usefull applications on UNSW marks API
+- current enpoints ensures login access to UNSW webcms
+- also receieves data of current
+- the data is unclean since every course has different marking scheme
+- look at png file to get an idea
+
+## FINAL AIM
+
+- The AIM is to make leaderboards for every comp course and visual graphs for the marks better than the current way.
+
+## endpoint
+
+- /login
+
+  - type post
+  - body zid:string(z58**\***) password:string
+  - returns true if correct else false
+
+- /courses/marks
+  - type get
+  - Query params code:1511,1531 etc (only number code), zid:string(z58**\***) , password:string, term ex 22T1, 22T2 etc
+  - return json file for the marks
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
