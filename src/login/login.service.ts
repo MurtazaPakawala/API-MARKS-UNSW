@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import * as puppeteer from 'puppeteer';
 
 async function loginHelper(zid: string, password: string) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ headless: false });
   let ans = false;
   try {
     const page = await browser.newPage();
@@ -12,11 +12,9 @@ async function loginHelper(zid: string, password: string) {
     await page.type('#zid', `${zid}`);
     await page.type('#password', `${password}`);
     await page.click('.well button');
-    await page.waitForNavigation({ waitUntil: 'networkidle2' });
+    await page.waitForNavigation();
     // await page.screenshot({ path: 'amazing2.png' });
     const url = await page.url();
-    console.log(url);
-
     if (url === 'https://webcms3.cse.unsw.edu.au/login') {
       ans = false;
     } else {
@@ -36,6 +34,6 @@ export class LoginService {
   //function for checking if user login
 
   async checkLogin(zid: string, password: string) {
-    return await loginHelper(zid, password);
+    return loginHelper(zid, password);
   }
 }
